@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI 助手 - 智能对话</title>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="/static/css/styles.css" rel="stylesheet">
+    <link rel="icon" href="data:,">
+</head>
+
+<body class="bg-light">
+    <!-- 顶部导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <i class="fas fa-robot me-2"></i>
+                AI 助手
+            </a>
+            <div class="navbar-nav ms-auto">
+                <button class="btn btn-outline-light btn-sm" id="clear-chat">
+                    <i class="fas fa-trash me-1"></i>清空对话
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <div class="container-fluid vh-100 d-flex flex-column">
+        <div class="row flex-grow-1">
+            <div class="col-12">
+                <!-- 对话区域 -->
+                <div class="chat-container mx-auto">
+                    <div id="chat-messages" class="chat-messages">
+                        <!-- 欢迎消息 -->
+                        <div class="message-container mb-4">
+                            <div class="message bot-message">
+                                <div class="message-avatar">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="message-content">
+                                    <div class="message-text">
+                                        <h5 class="mb-2">👋 你好！我是AI助手</h5>
+                                        <p class="mb-0">我可以帮你回答问题、提供信息、协助解决问题。有什么我可以帮你的吗？</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 输入区域 -->
+                    <div class="input-area">
+                        <div class="input-container">
+                            <form id="chat-form" class="d-flex align-items-end">
+                                <div class="flex-grow-1 position-relative">
+                                    <textarea id="message-input" class="form-control message-input"
+                                        placeholder="输入你的问题..." rows="1" maxlength="2000"></textarea>
+                                    <div class="char-counter">
+                                        <span id="char-count">0</span>/2000
+                                    </div>
+                                </div>
+                                <button type="submit" id="send-button" class="btn btn-primary send-button ms-2"
+                                    disabled>
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 加载指示器 -->
+    <div id="typing-indicator" class="typing-indicator" style="display: none;">
+        <div class="message-container">
+            <div class="message bot-message">
+                <div class="message-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="message-content">
+                    <div class="typing-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="/static/js/custom.js"></script>
+</body>
+
+</html>
